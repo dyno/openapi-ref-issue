@@ -1,0 +1,13 @@
+Dog:
+  allOf: # Combines the main `Pet` schema with `Dog`-specific properties
+    - $ref: "../schemas/Pet.yaml#/Pet"
+  # - $ref: "Pet.yaml#/Pet"
+  # - $ref: "schemas/Pet.yaml#/Pet"
+    - type: object
+      # all other properties specific to a `Dog`
+      properties:
+        bark:
+          type: boolean
+        breed:
+          type: string
+          enum: [Dingo, Husky, Retriever, Shepherd]

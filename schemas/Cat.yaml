@@ -1,0 +1,10 @@
+Cat:
+  allOf: # Combines the main `Pet` schema with `Cat`-specific properties
+  - $ref: "../schemas/Pet.yaml#/Pet"
+  - type: object
+    # all other properties specific to a `Cat`
+    properties:
+      hunts:
+        type: boolean
+      age:
+        type: integer

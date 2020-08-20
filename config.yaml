@@ -1,0 +1,10 @@
+groupId: com.signifyd
+artifactId: PetsApi
+artifactVersion: 0.0.1
+library: rest-assured
+serializationLibrary: jackson
+dateLibrary: java8
+apiPackage: openapi.internal.api
+modelPackage: openapi.internal.model
+
+# https://openapi-generator.tech/docs/generators/java/

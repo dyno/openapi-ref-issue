@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: Pets Api
+  version: "1.0"
+servers:
+  - url: http://localhost:8080
+paths:
+  /pets:
+    patch:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: "#/components/schemas/Cat"
+                - $ref: "#/components/schemas/Dog"
+              discriminator:
+                propertyName: pet_type
+      responses:
+        "200":
+          description: Updated
+components:
+  schemas:
+    Pet:
+      $ref: "schemas/Pet.yaml#/Pet"
+    Dog: # "Dog" is a value for the pet_type property (the discriminator value)
+      $ref: "schemas/Dog.yaml#/Dog"
+    Cat: # "Cat" is a value for the pet_type property (the discriminator value)
+      $ref: "schemas/Cat.yaml#/Cat"
